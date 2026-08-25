@@ -1,4 +1,4 @@
-Donor Egg IVF Prediction – PCS Documentation
+**Donor Egg IVF Prediction – PCS Documentation**
 
 This repository contains the Predictability, Computability and Stability (PCS) documentation supporting the development and evaluation of live birth prediction models for donor egg IVF.
 
@@ -13,11 +13,15 @@ Interactive PCS Documentation
 
 The documentation was developed in R Markdown using the PCS framework for veridical data science.
 
-Repository contents
+
+**Repository contents**
+
 index.html – Interactive PCS documentation
+
 README.md – Repository overview
 
-Data availability
+
+**Data availability**
 
 The clinical data used to develop and validate the prediction models are not included in this repository due to data governance and privacy requirements.
 
