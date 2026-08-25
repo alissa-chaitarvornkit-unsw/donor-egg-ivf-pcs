@@ -1222,7 +1222,7 @@ also commonly referred to as “IVF”.</p>
 <p>Accurate estimations of IVF success allow patients to make informed
 decisions on their treatment and set realistic expectations. Currently
 there are only two publicly available donor egg IVF prediction tools
-available to patients, the Luke and Fitzgerald model (Fitzgerald et al.,
+available to patients, the Fitzgerald and Luke model (Fitzgerald et al.,
 2024; Luke et al., 2014). However, they rely on fewer predictor
 variables, use traditional statistical models and operate on outdated
 data. Exploring models of varying complexity, in addition to additional
@@ -1253,9 +1253,9 @@ framework for veridical data science (Yu &amp; Kumbier, 2020).</p>
 <div id="model-development-pipeline" class="section level3">
 <h3>Model development pipeline</h3>
 <p>The general pipeline of the model development and evaluation is as
-follows. 1. Data curation 2. Data pre-processing 3. Model training and
-optimisation 4. Model evaluation 5. Feature importance and
-interpretation analysis</p>
+follows: data curation, data pre-processing, model training and
+optimisation, model evaluation, feature importance and interpretation
+analysis</p>
 </div>
 </div>
 </div>
@@ -1644,7 +1644,7 @@ the missingness was low, with recipient BMI having the highest
 proportion of missing (approximately 6%) (<span class="crossref">Figure
 9</span>). Other variables ranged from 0.4-0.8% missing values. As the
 level of missingness was quite low, there was enough data to make an
-accurate imputation Various imputation methods were evaluated to see
+accurate imputation. Various imputation methods were evaluated to see
 which imputation created the least AUC-ROC error in a sensitivity
 analysis, with KNN = 5 proving the lowest imputation error and therefore
 chosen in the pipeline (<span class="crossref">Figure 10</span>).</p>
@@ -1699,11 +1699,11 @@ highest to lowest AUC-ROC performance.</p>
 <div id="modelling-methods" class="section level2">
 <h2><strong>3.1 Modelling methods</strong></h2>
 <div class="well">
-<p>The prediction outcome was live birth outcome after a donor egg
+<p>The prediction outcome was a live birth outcome after a donor egg
 embryo transfer, therefore making it appropriate for classification. The
 goal of the study was to assess whether model complexity influenced
 prediction outcomes, therefore a diverse range of classification models
-spanning various levels of complexity and interpretability was chosen.
+spanning various levels of complexity and interpretability were chosen.
 The models included:</p>
 <ul>
 <li><p>Logistic regression (LR) as it is a widely used approach for
@@ -1756,7 +1756,7 @@ repeated resampling (Johns, 1988).</p>
 following the preprocessing pipeline. A grid search of hyperparameters
 was tuned during the 3x repeated 10-fold cross validation process, where
 the hyperparameter was chosen with the lowest AUC-ROC error (<span class="crossref">Table 2</span>).</p>
-<p>Models were evaluated based on the held-out method during the
+<p>Models were evaluated based on the hold-out method during the
 cross-validation stage, models that had poor performance in this check
 and less stable were excluded from further analysis. Confusion matrices
 were examined to see the balance between sensitivity and specificity
@@ -2105,13 +2105,13 @@ whereby 30% is reflected in the real-world scenario.</p>
 metrics using 1000 bootstrap resamples of the test dataset. Narrower
 confidence intervals indicated greater precision on the performance
 metrics and increase confidence in the model’s prediction. Model
-stability was further assessed through external validation using the New
-Zealand cohort. Here, performance was generally maintained with only
-minor metric shifts. Model transportability was further assessed using
-reverse external validation by training the models on New Zealand data
-and testing it on the Australian cohort. This helped assess whether the
-change in metrics was due to population differences rather than model
-instability.</p>
+stability was assessed through external validation using the New Zealand
+cohort, detailed more in Chapter 4. Validaiton Outcomes. Here,
+performance was generally maintained with only minor metric shifts.
+Model transportability was further assessed using reverse external
+validation by training the models on New Zealand data and testing it on
+the Australian cohort. This helped assess whether the change in metrics
+was due to population differences rather than model instability.</p>
 </div>
 <div id="roc-plots" class="section level3 tabset">
 <h3 class="tabset"><strong>ROC plots</strong></h3>
@@ -2305,16 +2305,17 @@ like GAM and regLR had consistent performance across the test
 validation, external validation and reverse external validation (<span class="crossref">Table 8</span>). These findings indicate that these
 interpretable models provided the best balance of predictive
 performance, stability and transportability.</p>
-<p>Moving onto the interpretability analysis was performed on the seven
-models that were stable and outperformed the YourIVFSuccess Estimator.
-Permutation feature importance consistently indicated that the number of
-recipient embryo transfers was the top feature across the models with an
-average AUC-ROC % change of -18.7% when the variable was permuted. This
-was followed by embryo development stage. Importantly, the candidate
-pre-treatment features of female recipient BMI and sex of intending
-parents (female-male and female-female) were ranked amongst the top 10
-variables across the models, supporting their potential to be included
-in the future YourIVFSuccess Estimator.</p>
+<p>Moving onto the interpretability analysis, it was performed on the
+seven models (DT excluded) that were stable and outperformed the
+YourIVFSuccess Estimator. Permutation feature importance consistently
+indicated that the number of recipient embryo transfers was the top
+feature across the models with an average AUC-ROC % change of -18.7%
+when the variable was permuted. This was followed by embryo development
+stage. Importantly, the candidate pre-treatment features of female
+recipient BMI and sex of intending parents (female-male and
+female-female) were ranked amongst the top 10 variables across the
+models, supporting their potential to be included in the future
+YourIVFSuccess Estimator.</p>
 <p>Deep diving into the ALE plots, they were relatively in line with
 literature on the nature of the features influencing the live birth rate
 predictions of the models. For instance, as the number of recipient
@@ -3247,13 +3248,13 @@ overall stability.
 performance and model transportability compared to more interpretable
 models like GAM. However, by incorporating additional variables, it did
 improve the model performance over the current YourIVFSuccess Estimator
-while providing the opportunity to make the Estimator more personalised.
-Particularly, recipient BMI and sex of the intending parents emerged as
-promising variables. Although these findings are based on some newly
-collected variables, further validation would be beneficial once more
-data becomes available. Overall, the study demonstrates that
-interpretable transparent models can provide a robust and trustworthy
-clinical decision aid for donor egg IVF.</p>
+while providing the opportunity to make the YourIVFSuccess Estimator
+more personalised. Particularly, recipient BMI and sex of the intending
+parents emerged as promising variables. Although these findings are
+based on some newly collected variables, further validation would be
+beneficial once more data becomes available. Overall, the study
+demonstrates that interpretable transparent models can provide a robust
+and trustworthy clinical decision aid for donor egg IVF.</p>
 </div>
 </div>
 <div id="bibliography" class="section level1">
