@@ -20,6 +20,8 @@ index.html – Interactive PCS documentation
 
 README.md – Repository overview
 
+PCS-Documentation-Donor-Egg-IVF-modelling-PDF.pdf - PDF version of PCS documentation
+
 
 **Data availability**
 
